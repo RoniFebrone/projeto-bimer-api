@@ -1,9 +1,9 @@
-import LoginForm from '../../../Components/LoginForm/index'
+import AcessToken from '../../../Components/AcessToken/index'
 
 const Page = () => {
   return (
     <div>
-      <LoginForm />
+      <AcessToken />
     </div>
   );
 };

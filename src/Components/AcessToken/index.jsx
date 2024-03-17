@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 
-const loginForm = () => {
+const acessToken = () => {
     const loginInfo = {
         nonce: '123456789',
         username: 'BimerAPI',
@@ -33,22 +33,24 @@ const loginForm = () => {
             setTokenInfo(responseData.access_token);
 
             console.log('Login Efetuado com Sucesso!');
-            
+
         } catch (error) {
             console.error('Erro ao fazer login:', error.message);
         }
     };
 
-    
+
 
     useEffect(() => {
-        login(); 
-    }, []); 
+        login();
+        const interval = setInterval(login, 10 * 60 * 1000); 
+        return () => clearInterval(interval);
+    }, []);
     return (
         <div>
-            
+
         </div>
     );
 };
 
-export default loginForm;
+export default acessToken;
